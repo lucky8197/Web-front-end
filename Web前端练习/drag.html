@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<style type="text/css">
+	a:link{
+		text-decoration:none;
+	}
+	div>a{
+		display:inline-block;
+		text-align:center;
+		width:120px;
+		padding:8px;
+		background-color:#eee;
+		border:2px solid black;
+		border-radius:20px;
+	}
+	@keyframes fisheye{
+		0%{
+			transform:scale(1);
+			background-color: #eee;
+			border-radius:10px;
+		}
+		40%{
+			transform:scale(1.5);
+			background-color: #bbb;
+			border-radius:10px;
+		}
+		100%{
+			transform:scale(1);
+			background-color: #eee;
+			border-radius:10px;
+		}
+	}
+	div>a:hover{
+		animation-name: fisheye;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<a href="http://www.crazyit.org" alt="crazyit">疯狂Java联盟</a>
+		<a href="http://www.fkjava.org" alt="fkjava">疯狂软件教育</a>
+		<a href="http://www.crazyit.org" alt="crazyit">关于我们</a>
+		<a href="http://www.fkjava.org" alt="fkjava">疯狂成员</a>
+	</div>
+</body>
+</html>

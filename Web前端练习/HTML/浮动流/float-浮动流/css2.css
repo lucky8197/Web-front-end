@@ -1,0 +1,17 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.wrapper{
+	/*position:absolute; float:left/right;会把内部的元素转换成inline-block*/
+	float:left;
+	border:1px solid red;
+}
+
+.content{
+	float:left;
+	width:100px;
+	height:100px;
+	background-color:black;
+	color:#fff;
+}

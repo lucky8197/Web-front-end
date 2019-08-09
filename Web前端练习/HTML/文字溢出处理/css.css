@@ -1,0 +1,13 @@
+p{
+	width:300px;
+	height:20px;
+	line-height:20px;
+
+	/*取消自动换行功能*/
+	white-space: nowrap;
+	/*超出部分隐藏*/
+	overflow: hidden;
+	/*超出文本用 ...表示*/
+	text-overflow: ellipsis;
+
+}

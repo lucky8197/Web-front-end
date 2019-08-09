@@ -1,0 +1,16 @@
+.top{
+	height:100px;
+	background-color: red;
+	margin-bottom: 100px;
+}
+.buttom{
+	height:100px;
+	background-color: blue;
+	/*上下两div共用距离。造成bug*/
+	margin-top:100px;
+}
+/*解决方法，但是涉及到修改html。一般都不解决
+。直接多一点像素就可以了*/
+/*.wrapper{
+	overflow: hidden;
+}*/

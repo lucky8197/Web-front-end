@@ -1,0 +1,19 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.right{
+	position: absolute;
+	right:0px;
+	width:100px;
+	height:100px;
+	background-color: red;
+	/*d透明度*/
+	opacity: 0.5;
+
+}
+.left{
+	height:100px;
+	background-color: blue;
+	margin-right:100px;
+}

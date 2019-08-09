@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>首页</title>
+	<style type="text/css">
+		table{
+			display: inline-table;
+			width:320px;
+			border:1px solid lightgrey;
+			border-collapse: collapse;
+			vertical-align: top;
+			margin-right: 0px;
+		}
+		td{
+			padding:15px;
+			cursor: pointer;
+			border:1px solid lightgrey;
+		}
+		tr{
+			background: linear-gradient(to right, #f6f6f6, #fff);
+		}
+		tr:hover{
+			background: linear=linear-gradient(to right, #eee, #f6f6f6);  
+		}
+		div>div{
+			display: inline-block;
+			width:400px;
+			height:300px;
+			padding:10px;
+			box-sizing: border-box;
+			border:1px solid lightgrey;
+			margin-left: 0px;
+		}
+	</style>
+</head>
+<body >
+	<div style="width:725px;">
+		<table border="1">
+			<tr><td title="java">疯狂Java讲义</td></tr>
+			<tr><td title="ee">轻量级Java EE企业应用实战</td></tr>
+			<tr><td title="android">疯狂Android讲义</td></tr>
+			<tr><td title="html">疯狂HTML</td></tr>
+			<tr><td title="front">疯狂前段讲义</td></tr>
+		</table><div id="show"></div>
+	</div>
+	<script type="text/javascript">
+		var xhr = new XMLHttpRequest();
+		window.onload = function(){
+			history.replaceState(null,"首页","index.html?id=java")
+		}
+		var tdList = document.querySelectorAll("td");
+		for(var i = 0; i < tdList.length; i++){
+			tdList[i].onclick = function(src){
+				sendGet("books.jsp?id=" + src.target.title);
+				history.pushState({"cellTitle":src.target.title},
+					" 首页" , "index.html?id=" + src.target.title);
+				var tdList = document.querySelectorAll("td");
+				for(var i = 0; i < tdList.length; i++){
+					tdList[i].style = undefined;
+				}
+				src.target.style.background = "linear-gradient(to right, #ddd , #eee)";
+			}
+
+		}
+
+		function sendGet(url){
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					document.querySelector("#show").innerHTML = xhr.responseText;
+				}
+			};
+			xhr.open("GET" , url, true);
+			xhr.send();
+		}
+		window.addEventListener("popstate" , function(){
+			var curTitle = history.state["cellTitle"];
+			var tdList = document.querySelectorAll("td");
+			for(var i = 0; i < tdList.length; i++){
+				if(tdList[i].title == curTitle){
+					tdList[i].style.background = "linear-gradient(to right, #ddd, #eee)";
+				} else{
+					tdList[i].style = undefined;
+				}
+			}
+			queryStr = window.location.href.split("?")[1];
+			sendGet("books.jsp?" + queryStr);
+		});
+	</script>
+</body>
+</html>

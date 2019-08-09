@@ -1,0 +1,15 @@
+1滚动条消失
+  overflow-x:hidden;横向滚动条消失。
+2同时选中多个相同标签
+  选中一个再ctrl+d 。往下拖。
+3颜色渐变 linear-gradient
+4 input标签
+  border:none;
+  outline:0; 
+  text-indent：2em  缩进
+5 背景颜色渐变  linear-gradient(线性渐变)
+例如：background:linear-gradient(to right,#ff9000 0,#ff5000 100%);
+6 圆角  border-radius
+7 背景定位
+background-position: 0 -484px;
+

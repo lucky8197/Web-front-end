@@ -1,0 +1,18 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.wrapper{
+	border:1px solid black;
+}
+.content{
+	float: left;
+	width:100px;
+	height: 100px;
+	background-color: black;
+	color:#fff;
+}
+p{
+	border: 0 solid black;
+	clear: both;
+}

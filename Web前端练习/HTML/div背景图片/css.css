@@ -1,0 +1,12 @@
+div{
+	width:200px;
+	height:200px;
+	border:1px solid black;
+	background-image: url(tly.jpg);
+
+	background-size:100px 100px;
+	/*铺不满时不重复*/
+	background-repeat:no-repeat;
+	/*background-position: 100px 100px;*/
+	background-position: left top;/*左上*/
+}

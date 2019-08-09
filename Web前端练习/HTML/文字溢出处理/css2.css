@@ -1,0 +1,8 @@
+p{
+	width:150px;
+	height: 50px;
+	line-height: 25px;
+
+	/*多行文本做截断*/
+	overflow: hidden;
+}

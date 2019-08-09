@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>输出Smith数</title>
+	<script type="text/javascript">
+		var n = window.prompt("请输入n的值:");
+		alert(smith(n));
+		/*判断是否为质数*/
+		function fun1(n){
+			for(var i = 2; i <= Math.sqrt(n); i++){
+				if(n % i == 0){
+					return false;
+				}
+			}
+			return true;
+		}
+		/*返回合数的第一个因数*/
+		function fun2(n){
+			for(var i = 2; i <= Math.sqrt(n); i++){
+				if(n % i == 0){
+					return i;
+				}
+			}
+		}
+		/*求一个数的个各位数之和*/
+		function fun3(n){
+			var sum = 0;
+			numStr = n.toString();
+			for(var j = 0; j < numStr.length; j++){
+				sum += parseInt(numStr[j]);
+			}
+			return sum;
+		}
+		/*输出smith数*/
+		function smith(n){
+			var temp;	
+			var outStr = "";	
+			for(var i = 4; i <= n; i++){			
+				if(fun1(i)){
+					continue;
+				}
+				var sum = 0;
+				var Sum = 0;
+				temp = i;
+				while(! fun1(temp)){
+					sum += fun2(temp);
+					temp = temp / fun2(temp);
+				}
+				sum += fun3(temp);
+				Sum = fun3(i);
+				if(Sum == sum){
+					outStr += i;
+					outStr += " ";
+				}
+			}
+			return outStr;
+		}	
+	</script>
+</head>
+<body >
+	<div >Smith数定义：一个非质数（合数），这个数的各位数之和等于他所有的质因数的各位数之和。例如： 4 = 2 * 2 ， 4 = 2 + 2</div>
+</body>
+</html>

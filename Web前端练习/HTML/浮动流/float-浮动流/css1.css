@@ -1,0 +1,21 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.wrapper{
+	border:1px solid black;
+}
+.wrapper::after{
+	/*conten必须要*/
+	content:"";
+	display:block;
+	/*块级元素才有用*/
+	clear:both;
+}
+.content{
+	float:left;
+	width:100px;
+	height:100px;
+	background-color:black;
+	color:#fff;
+}
